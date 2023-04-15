@@ -1,2 +1,3 @@
-# slides-ICLC
-Slides for the ICLC presentation
+# Slides ICLC
+
+These slides are using reveal.js.
