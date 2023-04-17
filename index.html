@@ -18,12 +18,14 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<style>
+
 		:root {
 			--mono: "MONO" 1;
 			--casl: "CASL" 1;
 			--wght: "wght" 400;
 			--slnt: "slnt" 0;
 			--CRSV: "CRSV" 0.5;
+			background-color: black;
 		}
 		.reveal p,
 		.reveal ul,
@@ -44,13 +46,36 @@
 		<div class="reveal">
 			<div class="slides">
 
-				<section>
+				<section 
+					 data-background-image="https://sardine.raphaelforment.fr/sardine_logo.svg#center" 
+					data-background-opacity=0.25	
+					data-background-size=800px>
 				<!-- <h2>Sardine: a Modular Python Live Coding Environment</h2> --!>
 					<h2 class="r-fit-text">SARDINE</h2>
 					<h2 class="r-fit-text">A Modular Python Live Coding Environment</h2>
 					<p><b>Raphaël Maurice Forment (ECLLA, UJM)</p></b>
 					<p><b>Jack Armitage (IIL Labs, Reykjavík)</b></p>
 				</section>
+
+
+				<section>
+				<img width=800 height=520 src="images/sardine_first_algorave.png">
+				<p style="font-size: 16pt">BuboBubo and Léon Denise, Sardine first algorave using an alpha version, October 13th (2022), Hydrophone, Lorient. Photo: Guillaume Kerjean.</p>
+				</section>
+
+				<section>
+				<img width=800 height=520 src="images/satelite.png">
+				<p style="font-size: 16pt">BuboBubo and Vocoda, Sardine performance during the satellite algorave on the 8th of April (2023), Grrrnd Zero, Lyon. Photo: Émilie Breslavetz.</p>
+				</section>
+
+
+				<section>
+				<video autoplay="true" loop="true" muted="true" width="640" height="480">
+   				<source src="images/sardine_workshop.mp4" type="video/mp4"> Your browser does not support the video tag.
+				</video>
+				<p style="font-size: 16pt">Sardine Workshop using Damián Silvani's <b>Flok</b> collaborative editor at GRAME (National Center for Music Creation), Lyon (3th of April). Rémi Georges, Agathe Herrou, Raphaël Forment. Video: Agathe Herrou.</p>
+				</section>
+
 
 				<section>
 				<h4 style="font-size: 24pt; letter-spacing: 0.05em">BIOGRAPHY</h4>
@@ -73,8 +98,12 @@
 				</section>
 
 				<section>
-					<p style="font-size: 20pt">Sardine wouldn't be where it stands today without the collective energy of many open-source independant contributors.
-					Many live coders among them but also many people discovering live coding through Python hacking!</p> <b style="font-size: 20pt">Open-source contributors: </b> 
+					<p style="margin: 0; padding: 0; height:100px" align='center'>
+    				<a style="font-size: 10pt;" href="https://github.com/bubobubobubobubo/sardine/graphs/contributors">
+    					<img style='margin: 0;' width=500 height=200 src="https://contrib.rocks/image?repo=bubobubobubobubo/sardine" />
+    				</a>
+  				</p>
+
 					<br>
 					<em style="font-size: 20pt" class="fragment fade-in">John Phan (thegamecracks, clock, architecture)</em> 
 					<br>
@@ -105,6 +134,11 @@
 			 		     Users know better what they would like to do!
 			    <li class="fragment fade-in"> (<b>WIP</b>) Make it powerful and accessible!
 				</ul>
+				</section>
+
+				<section>
+				<img width=800 height=400 src="images/sardine_ancestor.png">
+				<p style="font-size: 16pt">Sardine ancestor, Belly/ComputerTalk, a MIDI based pattern sequencer.</p>
 				</section>
 			 
 				<section>
@@ -138,10 +172,17 @@
 					</ul>
 				</section>
 
+
 				</section>
 
 				<section>
 					<h4 style="font-size: 24pt; letter-spacing: 0.05em">ARCHITECTURE AND DESIGN</h4>
+
+
+					<section>
+					<img width=720 height=470 src="https://raw.githubusercontent.com/Bubobubobubobubo/sardine/main/paper/images/event_loop_diagram.png">
+					<p style="font-size: 16pt">Sardine Event Loop Design, excerpt from the ICLC paper.</p>
+					</section>
 
 					<section>
 						<b>Sardine</b>: the library (clocks, patterns, I/O)
@@ -178,6 +219,8 @@
 					<br>
 					</ul>
 					</section>
+
+
 
 					<section>
 						Configuring Sardine is an essential part of the interaction with the software. You get to decide what you want to get out of it:
@@ -223,7 +266,7 @@
 				</section>
 
 				<section>
-					<p style="font-size: 20pt;">Patterning is done by iteration:</p>
+					<p style="font-size: 20pt;">Patterning is done by iterating over data structures:</p>
 					  <pre class="python"><code data-trim data-noescape data-line-numbers="3,4">
 					@swim
 					def hello_world(p=0.5, i=0):
