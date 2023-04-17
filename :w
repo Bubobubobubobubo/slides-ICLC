@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Sardine ICLC</title>
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Recursive:MONO@1&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<style>
+		:root {
+			--mono: "MONO" 1;
+			--casl: "CASL" 1;
+			--wght: "wght" 400;
+			--slnt: "slnt" 0;
+			--CRSV: "CRSV" 0.5;
+		}
+		.reveal p,
+		.reveal ul,
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4,
+		.reveal h5,
+		.reveal h6 {
+		  margin: 0 0 20px 0;
+		  font-family: 'Recursive', sans-serif;
+	  	font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--CRSV);
+		  text-shadow: none; 
+		}
+	</style>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+				<!-- <h2>Sardine: a Modular Python Live Coding Environment</h2> --!>
+					<h2 class="r-fit-text">SARDINE</h2>
+					<h2 class="r-fit-text">A Modular Python Live Coding Environment</h2>
+					<p><b>Raphaël Maurice Forment (ECLLA, UJM)</p></b>
+					<p><b>Jack Armitage (IIL Labs)</b></p>
+				</section>
+
+				<section>
+				<h4 style="font-size: 24pt; letter-spacing: 0.05em">BIOGRAPHY</h4>
+				<section>
+					<ul>
+					<li style="font-size: 22pt;"> <b>Raphaël Maurice Forment: </b> PhD Student at the ECLLA laboratory (Université Jean Monnet de Saint-Étienne). I am doing a transdisciplinary research 
+					(musicology, computer science, social sciences) about live coding tools, their usage and how the tools are transformed by the discourses and practices that accompany the different practices 
+					and views on live coding.
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+					<li style="font-size: 22pt;"> <b>Jack Armitage: </b> Postdoctoral research fellow at the Intelligent Instruments Lab. 
+					Doctorate in Media and Arts Technologies from Queen Mary University of London, where he studied in Prof. Andrew McPherson's 
+					Augmented Instruments Lab. BSc in Music, Multimedia & Electronics from the University of Leeds. His research interests include embodied 
+					interaction, craft practice and design cognition. He also produces, performs and live codes music as Lil Data, as part of the PC Music 
+					record label.
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+					<li style="font-size: 22pt;"> <b>Open-source contributors: </b> 
+					<em>thegamecracks (John Phan)</em> (clock, design, architecture), <em>HighHarmonics2</em> (documentation and bug chasing),
+					<em>Ralt144MI (Rémi Georges)</em> (crash testing and bugfixing), <em>Miika Alonen</em> (Ziffers integration), <em>TWal</em>
+					(parser refactoring), mugulmd, JMPothelune, jarmitage, jure2018, hatchjaw, lutangar, giohappy, and <b>many others :)</b>
+					</ul>
+				</section>
+				</section>
+
+				<section>
+				<h4 style="font-size: 24pt; letter-spacing: 0.05em">RATIONALE</h4>
+
+				<section>
+				<p style="font-size: 22pt">Sardine development initially started as a tool for analysing and documenting live coding practices:</p>
+				<ul style="font-size: 20pt">
+			 		<li> Studying/documenting live coding principles and idioms
+			 		<li> Developing a playground for live coding notations
+			 		<li> Customization, Extendability, Modularity
+				</ul>
+				</section>
+			 
+				<section>
+					<h2>Live coding idioms</h2>
+					<ul style="font-size: 20pt">
+						<li> Centered on <em>temporal recursive functions</em> idioms, a central design pattern in the history of musical live coding.
+						<li> <em>Imperative</em>, <em>declarative</em> and <em>~functional~</em> approaches to musical patterning.
+						<li> Support for <em>modern</em> features: collaborative jamming, Ableton Link Clock support.
+					</ul>
+				</section>
+
+
+				<section>
+					<h2 class="r-fit-text">Playground for live coding notations</h2>
+					<ul style="font-size: 25pt"> 
+						<li> <em>Sardine Pattern Language</em>: a basic parser for patterns.
+						<li> <em>Ziffers Numeric Language</em>: a parser for chords / melodies.
+						<li> <em>Python for hackability</em>: custom pattern language design.
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="r-fit-text">Customization / Extendability</h2>
+					<ul style="font-size: 25pt"> 
+						<li> Full support for <b>MIDI</b> and <b>OSC</b> protocols (in and out): reactive code, 
+						     polling controller values, 
+  		  		<li> Definition of custom <b>MIDI</b> instruments and controllers.
+						<li> <b>Integrating foreign libraries</b>: Sardine is just regular Python code.
+					</ul>
+				</section>
+
+				</section>
+
+
+				<section>
+				<h2>Documentation</h2>
+				<section>
+				Baba
+				</section>
+				<section>
+				Dada
+				</section>
+
+				</section>
+
+
+        <section>
+        <h2> What is Sardine? </h2>
+        </section>
+
+
+        <section>
+        <h2 class="r-fit-text"> Architecture </h2>
+        <ul>
+        	<li> <b>Sardine: </b> the main library.
+        	<li> <b>Fishery: </b> the code interpreter.
+        	<ul>
+        		<li> <b>Fishery Web:</b> The embedded code editor.
+        	</ul>
+        	<li> <b>Ziffers-Python:</b> standalone plugin for the Ziffers notation.
+        </ul>
+
+        </section>
+
+        <section>
+        <h2> Pattern Language </h2>
+        </section>
+
+        <section>
+        <h2> H? </h2>
+        </section>
+				
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

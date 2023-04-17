@@ -4,20 +4,331 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Sardine ICLC</title>
 
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Recursive:MONO@1&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
+	<style>
+		:root {
+			--mono: "MONO" 1;
+			--casl: "CASL" 1;
+			--wght: "wght" 400;
+			--slnt: "slnt" 0;
+			--CRSV: "CRSV" 0.5;
+		}
+		.reveal p,
+		.reveal ul,
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4,
+		.reveal h5,
+		.reveal h6 {
+		  margin: 0 0 20px 0;
+		  font-family: 'Recursive', sans-serif;
+	  	font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--CRSV);
+		  text-shadow: none; 
+		}
+	</style>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+				<!-- <h2>Sardine: a Modular Python Live Coding Environment</h2> --!>
+					<h2 class="r-fit-text">SARDINE</h2>
+					<h2 class="r-fit-text">A Modular Python Live Coding Environment</h2>
+					<p><b>Raphaël Maurice Forment (ECLLA, UJM)</p></b>
+					<p><b>Jack Armitage (IIL Labs, Reykjavík)</b></p>
+				</section>
+
+				<section>
+				<h4 style="font-size: 24pt; letter-spacing: 0.05em">BIOGRAPHY</h4>
+				<section>
+					<p style="font-size: 20pt;"> <b>RAPHAËL MAURICE FORMENT: </b> PhD Student from the ECLLA laboratory (Université Jean Monnet, Saint-Étienne). My work is supervised by Laurent Pottier (ECLLA, UJM)
+					and Alain Bonardi (Paris 8 University, MUSIDANSE). I am doing transdisciplinary research (musicology, computer science, social sciences) about live coding tools
+					and their usage. I study how the tools we use are transformed by the discourses and practices that accompany the different practices 
+					and views on live coding. I am also an active member of the french live coding scene, talking, teaching and practicing live coding with my friends and colleagues from
+					Lyon and Paris (Cookie Collective).</p>
+				</section>
+
+				<section>
+					<p style="font-size: 20pt;"> <b>JACK ARMITAGE: </b> Jack Armitage is a postdoctoral research fellow at the Intelligent Instruments Lab.
+					He has a doctorate in Media and Arts Technologies from Queen Mary University of London, where he studied in Prof.
+					Andrew McPherson's Augmented Instruments Lab. During my PhD he was a Visiting Scholar at Georgia Tech under Prof. Jason Freeman.
+					Before then, he was a Research Engineer at ROLI after graduating with a BSc in Music, Multimedia & Electronics from the University of
+					Leeds. His research interests include embodied interaction, craft practice and design cognition. He also produces, performs and live codes music as Lil Data, as part of the PC Music record label.
+
+					</p>
+				</section>
+
+				<section>
+					<p style="font-size: 20pt">Sardine wouldn't be where it stands today without the collective energy of many open-source independant contributors.
+					Many live coders among them but also many people discovering live coding through Python hacking!</p> <b style="font-size: 20pt">Open-source contributors: </b> 
+					<br>
+					<em style="font-size: 20pt" class="fragment fade-in">John Phan (thegamecracks, clock, architecture)</em> 
+					<br>
+					<em style="font-size: 20pt" class="fragment fade-in">Rémi Georges (ralt144mi, crash testing and bugfixing)</em> 
+					<br>
+					<em style="font-size: 20pt" class="fragment fade-in">Miika Alonen (amiika, Ziffers integration)</em>
+					<br>
+					<em style="font-size: 20pt" class="fragment fade-in">HighHarmonics2 (documentation and bug chasing)</em>
+					<br>
+					<em style="font-size: 20pt" class="fragment fade-in">TWal (parser refactoring)</em> 
+					<br>
+					<em style="font-size: 20pt" class="fragment fade-in">JMPothelune (Fishery Web troubleshot and server work)</em>
+					<br>
+					<em style="font-size: 20pt" class="fragment fade-in">mugulmd, jure2018, hatchjaw, lutangar, giohappy, and <b>many others :)</b></em>
+				</section>
+				</section>
+
+				<section>
+				<h4 style="font-size: 24pt; letter-spacing: 0.05em">RATIONALE</h4>
+
+				<section>
+				<p style="font-size: 22pt">Sardine development initially started as a tool for studying and documenting live coding practices:</p>
+				<ul style="font-size: 20pt">
+			 		<li class="fragment fade-in"> Re-creating live coding design patterns, idioms, principles.
+			 		<li class="fragment fade-in"> Creating a playground for live coding notations.
+			 		<li class="fragment fade-in"> Keep it customizable, extendable and modular (open to users)
+			 		<li class="fragment fade-in"> Documenting and sharing as part of the design process. Live coding, due to its open-source nature, is a collective activity. 
+			 		     Users know better what they would like to do!
+			    <li class="fragment fade-in"> (<b>WIP</b>) Make it powerful and accessible!
+				</ul>
+				</section>
+			 
+				<section>
+					<h2>Live coding idioms</h2>
+					<ul style="font-size: 20pt">
+						<li class="fragment fade-in"> Centered on <em>temporal recursive functions</em>, a central design pattern in the musical live coding realm.
+						<li class="fragment fade-in"> Supporting <em>imperative</em>, <em>declarative</em> and <em>functional</em> approaches to musical patterning.
+						Computer languages and their specific syntaxes can be a barrier to <b>personal</b> musical expression.
+						<li class="fragment fade-in"> Support for <em>modern</em> features: collaborative jamming, Ableton Link Clock support. Keep up with modern
+						environments.
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>Playground for live coding notations</h2>
+					<ul style="font-size: 20pt"> 
+						<li class="fragment fade-in"> <em>Sardine Pattern Language</em> (SPL): a basic parser for data/note patterns. Pre-installed with the library, pre-configured.
+						<li class="fragment fade-in"> <em>Ziffers Numeric Language</em>: a parser for chords / melodies. Shipped as a Python module extension. pre-configured.
+						<li class="fragment fade-in"> <em>Python for hackability</em>: recursive functions + Python syntax = pattern language. User-made functions and patterns.
+					</ul>
+				</section>
+
+				<section>
+					<h2>Modularity</h2>
+					<ul style="font-size: 20pt"> 
+						<li class="fragment fade-in"> Full support for <b>MIDI</b> and <b>OSC</b> protocols (in and out): 
+						reactive code, querying controller values, Sardine as middleware. Room for improvements and more supported protocols.
+  		  		<li class="fragment fade-in"> Definition of custom <b>MIDI</b> <b>Senders</b> for instruments and controllers. Sardine can live without SuperCollider.
+						<li class="fragment fade-in"> <b>Integrating foreign libraries</b>: Sardine is just regular Python code. Import anything else.
+					</ul>
+				</section>
+
+				</section>
+
+				<section>
+					<h4 style="font-size: 24pt; letter-spacing: 0.05em">ARCHITECTURE AND DESIGN</h4>
+
+					<section>
+						<b>Sardine</b>: the library (clocks, patterns, I/O)
+						<br>
+						<b>Fishery</b>: the interpreter (<em>asyncio</em> Python)
+						<br>
+						<b>Fishery Web</b>: the web editor/interpreter
+						<br>
+						<br>
+						<p><b>Handles</b>: time, patterning, I/O
+					</section>
+
+
+					<section>
+						<p>Possible backends:</p>
+						<br>
+						<b>SuperDirt</b>: audio samples, SuperCollider backend.
+						<b>MIDI</b>: synthesizer, drum machine, hard/soft device.
+						<b>OSC</b>: synthesizer, drum machine, hard/soft device.
+						<br>
+						<br>
+						<p><b>Handles</b>: synthesis, sound/video output
+					</section>
+
+					<section>
+					Internal configuration based on the <b>FishBowl</b>:
+					<br>
+					<br>
+					<p class="fragment fade-in" style="font-size: 20pt;"> The FishBowl handles communication between components.</p>
+					<p class="fragment fade-in" style="font-size: 20pt;" > The FishBowl propagates events to components so they can react (one-way message-based system).</p>
+					<p class="fragment fade-in" style="font-size: 20pt;" > The FishBowl acts as a global environment for every component of the system: clocks, I/O, parser.</p>
+					<p class="fragment fade-in" style="font-size: 20pt;" > Modular component declaration: adding MIDI output, adding OSC senders/listeners, 
+					adding SuperDirt component, etc...</p>
+					<br>
+					</ul>
+					</section>
+
+					<section>
+						Configuring Sardine is the best part of Sardine. You get to decide what you want to get out of it:
+						<br>
+						<br>
+						<ul>
+							<li class="fragment fade-in"> Pattern system?
+							<li class="fragment fade-in"> MIDI?
+							<li class="fragment fade-in"> SuperDirt?
+							<li class="fragment fade-in"> OSC?
+							<li class="fragment fade-in"> Local or Networked clock?
+						<br>
+						</ul>
+					</section>
+
+					<section>
+					<p style="font-size: 20pt">Low-level implementation:</p>
+					<br>
+					<p style="font-size: 20pt">Taking advantage of the asyncio framework for asynchronous programming at the top-level (no need for explicit awaits)</p>
+					<br>
+					<p style="font-size: 20pt">Structured and object oriented codebase using abstract classes. They define the expected behavior for each base component: <em>Handlers</em>, <em>Clocks</em>, etc..  </p>
+					<br>
+					<p style="font-size: 20pt">Fully-documented codebase, teaching the inner workings of the system for potential future contributors. We use both vanilla and custom type hints.</p>
+					</section>
+				</section>
+
+				<section>
+					<h4 style="font-size: 24pt; letter-spacing: 0.05em">SYNTAX</h4>
+					<section>
+					<p style="font-size: 20pt;">The base mechanism is the <em>swimming function</em>:</p>
+					  <pre class="python"><code data-trim data-noescape data-line-numbers="1,4">
+					@swim
+					def hello_world(p=0.5, i=0):
+					    print(f"Hello {i}")
+						  again(hello_world, p=0.5, i=i+1)
+					</code></pre>
+					<ul style="font-size: 14pt;">
+						<li> Temporal recursive function using a decorator and a recursive call.
+						<li> The period argument: 1 beat = 1 period.
+						<li> Handling state through keyword arguments.
+					</ul>
+				</section>
+
+				<section>
+					<p style="font-size: 20pt;">Patterning is done by iteration:</p>
+					  <pre class="python"><code data-trim data-noescape data-line-numbers="3,4">
+					@swim
+					def hello_world(p=0.5, i=0):
+							# call to SuperDirt
+					    D('bd hh sn hh', i=i, speed='[1:10]', shape=.5)
+						  again(hello_world, p=0.5, i=i+1)
+					</code></pre>
+					<ul style="font-size: 14pt;">
+						<li> The <em>i</em> (<em>iterator</em>) argument and its modifiers (<em>rate</em>, <em>divisor</em>).
+						<li> The patterning language (<em>the string arguments</em>) as an helper.
+					</ul>
+				</section>
+
+				<section>
+					<p style="font-size: 20pt;">What about the verbosity?</p>
+					<br><br>
+					<p class="fragment fade-in" style="font-size: 20pt;">(1) Verbosity is not <em>inherently bad</em> for specific use cases. 
+					You can write pure Python, you can make swimming functions perform odd/peculiar tasks.
+					<p class="fragment fade-in" style="font-size: 20pt;">(2) Swimming functions are <b>templates</b> 
+					for writing temporal functions. Build your system by abstracting over them!
+					<p class="fragment fade-in" style="font-size: 20pt;">(3) They are generic, flavourless, un-opiniated.
+				</section>
+
+				<section>
+					<p style="font-size: 20pt;">Building abstractions for patterning / ease-of-use:</p>
+				  <pre class="python"><code data-trim data-noescape data-line-numbers>
+clock.tempo = 135
+Pe * d('long:3', cut=1, begin="[0.0:0.6,0.1]")
+Pc * d('ff:4!3 gg:12', cut=1, p=0.25, orbit=1, shape=0.5)
+Pb * d('f!7', cut=0, p=1, orbit=2, shape=0.5, legato=0.2)
+Pd * d('g:10', p='0.5 0.5 0.25', orbit=2, 
+			 shape=0.5, speed='2 2 1!2 4')
+					</code></pre>
+					<ul style="font-size: 14pt;">
+						<li> <em>FoxDot</em> like <em>surfboard</em> notation: internally hiding a <em>swimming function</em>.
+						<li> Fast to write, easy to teach, adaptable to many live coding notations.
+					</ul>
+				</section>
+
+				<section>
+					<style>
+					.container{
+					    display: flex;
+					}
+					.col{
+					    flex: 1;
+					}
+					</style>
+
+					<p style="font-size: 20pt;">Hijacking Python's syntax:</p>
+					
+					<div class="container">
+					
+					<div class="col">
+				  <pre class="python"><code data-trim data-noescape data-line-numbers>
+				@swim
+				def sleeping(p=2):
+				    D('bd')
+				    sleep(1)
+				    D('cp')
+				    again(sleeping, p=2)
+					</code></pre>
+					<p style="font-size: 14pt;"> Mimicking <em>Sonic Pi</em> (Sam Aaron) imperative sleeping mechanism <em>for the sake of it</em></p>.
+					</div>
+					
+					<div class="col">
+				  <pre class="python"><code data-trim data-noescape data-line-numbers>
+				  da * zd('braids', '0 1:2 ^2')
+				  do * zd('braids', '0.25 _ 0')
+				  ki * d('kick hat snare hat')
+					</code></pre>
+					<p style="font-size: 14pt;"> Integration and cohabitation of different parsers and musical notations: a SuperDirt specific <em>Ziffers</em> sender) for melody, SPL for drumming.</p>
+					</div>
+					</div>
+				</section>
+
+
+				<section>
+					<br>
+					<p style="font-size: 20pt;">Swimming functions are mandatory (scheduler).</p>
+					<br>
+					<p style="font-size: 20pt;">Pattern languages are optional and/or on-demand.</p>
+					<br>
+					<p style="font-size: 20pt;">Declarative components management and listeners for I/O.</p>
+					
+				</section>
+
+				</section>
+
+
+				</section>
+
+
+
+				<section>
+					<h4 style="font-size: 24pt; letter-spacing: 0.05em">THE SARDINE PROJECT</h4>
+					<section>
+						<p style="font-size: 20pt">
+						The Sardine project started last august. It is still a rather young live coding tool.
+						Where does it stands? What problems and/or obstacles are still present down the road?</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Python is a <em>strength</em> but also a <em>weakness</em></p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Modularity is a <em>strength</em> but also a <em>weakness</em></p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Growing a community of contributors / users</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Growing a community of contributors / users</p>
+					</section>
+				</section>
+
 			</div>
 		</div>
 
@@ -31,6 +342,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				slideNumber: 'c/t',
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
