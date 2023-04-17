@@ -179,7 +179,7 @@
 					</section>
 
 					<section>
-						Configuring Sardine is the best part of Sardine. You get to decide what you want to get out of it:
+						Configuring Sardine is an essential part of the interaction with the software. You get to decide what you want to get out of it:
 						<br>
 						<br>
 						<ul>
@@ -195,11 +195,11 @@
 					<section>
 					<p style="font-size: 20pt">Low-level implementation:</p>
 					<br>
-					<p style="font-size: 20pt">Taking advantage of the asyncio framework for asynchronous programming at the top-level (no need for explicit awaits)</p>
+					<p class="fragment fade-in" style="font-size: 20pt">Taking advantage of the asyncio framework for asynchronous programming at the top-level (no need for explicit awaits)</p>
 					<br>
-					<p style="font-size: 20pt">Structured and object oriented codebase using abstract classes. They define the expected behavior for each base component: <em>Handlers</em>, <em>Clocks</em>, etc..  </p>
+					<p class="fragment fade-in" style="font-size: 20pt">Structured and object oriented codebase using abstract classes. They define the expected behavior for each base component: <em>Handlers</em>, <em>Clocks</em>, etc..  </p>
 					<br>
-					<p style="font-size: 20pt">Fully-documented codebase, teaching the inner workings of the system for potential future contributors. We use both vanilla and custom type hints.</p>
+					<p class="fragment fade-in" style="font-size: 20pt">Fully-documented codebase, teaching the inner workings of the system for potential future contributors. We use both vanilla and custom type hints.</p>
 					</section>
 				</section>
 
@@ -213,6 +213,7 @@
 					    print(f"Hello {i}")
 						  again(hello_world, p=0.5, i=i+1)
 					</code></pre>
+
 					<ul style="font-size: 14pt;">
 						<li> Temporal recursive function using a decorator and a recursive call.
 						<li> The period argument: 1 beat = 1 period.
@@ -301,12 +302,13 @@ Pd * d('g:10', p='0.5 0.5 0.25', orbit=2,
 
 				<section>
 					<br>
-					<p style="font-size: 20pt;">Swimming functions are mandatory (scheduler).</p>
+					<p class="fragment fade-in" style="font-size: 20pt;">Swimming functions for timed interactions (scheduler).</p>
 					<br>
-					<p style="font-size: 20pt;">Pattern languages are optional and/or on-demand.</p>
+					<p class="fragment fade-in" style="font-size: 20pt;">Pattern languages/DSLs are optional and/or on-demand.</p>
 					<br>
-					<p style="font-size: 20pt;">Declarative components management and listeners for I/O.</p>
-					
+					<p class="fragment fade-in" style="font-size: 20pt;">I/O components use a declarative, session-based syntax.</p>
+					<br>
+					<p class="fragment fade-in" style="font-size: 20pt;">Interaction with the Python language is encouraged, by design. Not locking the user into a DSL / usecase.</p>				
 				</section>
 
 				</section>
@@ -325,8 +327,33 @@ Pd * d('g:10', p='0.5 0.5 0.25', orbit=2,
 						<p class="fragment fade-in" style="font-size: 20pt">- Python is a <em>strength</em> but also a <em>weakness</em></p>
 						<p class="fragment fade-in" style="font-size: 20pt">- Modularity is a <em>strength</em> but also a <em>weakness</em></p>
 						<p class="fragment fade-in" style="font-size: 20pt">- Growing a community of contributors / users</p>
-						<p class="fragment fade-in" style="font-size: 20pt">- Growing a community of contributors / users</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Addressing current issues / shortcomings</p>
 					</section>
+
+					<section>
+						<p style="font-size: 20pt">Python is a great language, and benefits from a large collection of packages and a large userbase.
+						Python is easy to read and easy to write.</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Managing a Python environment is <b>hard</b> and error-prone!</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Python distributions are hard to maintain / make sense of.</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Bundling and packaging binaries <b>has slowed down</b> the development pace significantly.</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Python is slow! (but is ostensibly speeding up!)</p>
+					</section>
+
+					<section>
+						<p style="font-size: 20pt">A modular live coding environment is what many live coders call for (hybridation, integration with other 
+						tools and live setups). However, it can be quite confusing:</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- Newcomers don't really know what <b>MIDI</b>, <b>OSC</b> or <b>SuperDirt</b> are! Using Sardine requires some technical learning!</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- The loose coupling of components can confuse people and lead them to think that things just doesn't work.</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- You have to nudge people towards the discovery the sardine-config tool or the modular components!</p>
+					</section>
+
+
+					<section>
+						<p style="font-size: 20pt">Building a community while developping a tool is hard and time-consuming. Sardine, by design, is <b>asking</b> for more hackers and contributions:</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- The live coding world mostly revolves around a certain set of tools (Tidal, Sonic Pi, FoxDot, Gibber, ORCA, etc). Live coders are accustomed and tuned to their inner workings.</p>
+						<p class="fragment fade-in" style="font-size: 20pt">- You have to get up to speed fast to not limit your users. At the same time, you have to build your new proposition.</p>
+					</section>
+
 				</section>
 
 			</div>
