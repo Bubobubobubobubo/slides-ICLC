@@ -54,7 +54,7 @@
 					<h2 class="r-fit-text">SARDINE</h2>
 					<h2 class="r-fit-text">A Modular Python Live Coding Environment</h2>
 					<p><b>Raphaël Maurice Forment (ECLLA, UJM)</p></b>
-					<p><b>Jack Armitage (IIL Labs, Reykjavík)</b></p>
+					<p><b>Jack Armitage (II Lab, Reykjavík)</b></p>
 					<p style="font-size: 15pt"><b>Link:</b> https://bubobubobubobubo.github.io/slides-ICLC/</p>
 
 					  <aside class="notes">
@@ -118,18 +118,19 @@
 					<ul>
 						<li style="font-size: 18pt;"> Supervised by Laurent Pottier (ECLLA, UJM)
 						<li style="font-size: 18pt;"> Co-supervised by Alain Bonardi (Paris 8 University, MUSIDANSE)</li>
-						<li style="font-size: 18pt;"> Visiting doctorate student, National Superior School of Fine Arts of Lyon (ENSBA)</li>
+						<li style="font-size: 18pt;"> Visiting doctoral student, National Superior School of Fine Arts of Lyon (ENSBA)</li>
 						<li style="font-size: 18pt;"> Master degrees at École Normale Supérieure d'Ulm (Paris) & EHESS (Paris): musicology
 						and social sciences.
 					</ul>
 						<li style="font-size: 18pt;"> Field of research: musicology, computer science, social sciences
 						<ul>
-						<li style="font-size: 17pt"> Live coding tools and their usage. How the different perceptions of live coding are shaping and influencing software design and <em>in fine</em>, musical practices. </li>
+						<li style="font-size: 17pt"> Tools and their usage. How the different perceptions of live coding are shaping and influencing software design and musical practices. </li>
 						</ul>
 						<li style="font-size: 18pt;"> Active member of the french live coding scene
 						<ul>
-							<li> Worksops and conferences (Academic and unformal settings).
-							<li> Performances with the Cookie Collective, with friends, etc.</p>
+							<li> Workshops and conferences (Academic and informal settings).
+							<li> Performances with the Cookie Collective, with friends, etc.
+							<li> Developing tools and performance helpers. 
 						</ul>
 
 					  <aside class="notes">
@@ -210,8 +211,8 @@
 				</section>
 
 				<section>
-				<img width=800 height=400 src="images/sardine_ancestor.png">
-				<p style="font-size: 16pt">Sardine ancestor, Belly/ComputerTalk, a MIDI based sequencer (2019 ~ 2020).</p>
+				<img width=700 height=400 src="images/sardine_ancestor.png">
+				<p style="font-size: 16pt">Sardine ancestor, Belly/ComputerTalk, <br>a MIDI based sequencer (2019 ~ 2020).</p>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -220,7 +221,7 @@
 				</section>
 			 
 				<section>
-					<p style="font-size: 30pt">Designing for genericity</p>
+					<p style="font-size: 30pt">Designed to be generic</p>
 					<br>
 					<ul style="list-style: disc; font-size: 20pt;">
 						<li style="font-size: 20pt" class="fragment fade-in">Centered on <em>temporal recursive functions</em>, a common programming pattern typically found in musical live coding libraries, 
@@ -293,7 +294,7 @@
 
 					<section>
 					<img width=600 height=250 src="images/archi_thing.png">
-					<p style="font-size: 16pt">Diagram: relation between the different modules composing <br>the Sardine environment.</p>
+					<p style="font-size: 16pt">The different modules that compose the Sardine environment</p>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -312,11 +313,13 @@
 					</section>
 
 					<section>
-						<p style="font-size:25pt"><b>Sardine</b>: the library (clocks, patterns, I/O)</p>
-						<p style="font-size:25pt"><b>Fishery</b>: the interpreter (<em>asyncio</em> Python)</p>
-						<p style="font-size:25pt"><b>Fishery Web</b>: the web editor/interpreter</p>
+						<p style="font-size: 30pt">Core components</p>
 						<br>
-						<p style="font-size:25pt"><b>Handles</b>: time, patterning, I/O</p>
+						<p class="fragment fade-in" style="font-size:25pt"><b>Sardine</b>: the library (clocks, patterns, I/O)</p>
+						<p class="fragment fade-in" style="font-size:25pt"><b>Fishery</b>: the interpreter (<em>asyncio</em> Python)</p>
+						<p class="fragment fade-in" style="font-size:25pt"><b>Fishery Web</b>: the web editor/interpreter</p>
+						<br>
+						<p class="fragment fade-in" style="font-size:25pt"><b>Handles</b>: time, patterning, I/O</p>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -326,14 +329,14 @@
 
 
 					<section>
-						<p style="font-size:25pt">Possible backends:</p>
+						<p style="font-size:30pt">Possible backends</p>
 						<br>
-						<p style="font-size:20pt" ><b>SuperDirt</b>: audio samples, SuperCollider backend.</p>
-						<p style="font-size:20pt"><b>MIDI</b>: synthesizer, drum machine, hard/soft device.</p>
-						<p style="font-size:20pt"><b>OSC</b>: synthesizer, drum machine, hard/soft device.</p>
+						<p class="fragment fade-in" style="font-size:25pt"><b>SuperDirt</b>: audio samples, SuperCollider backend.</p>
+						<p class="fragment fade-in" style="font-size:25pt"><b>MIDI</b>: synthesizers, hardware/software.</p>
+						<p class="fragment fade-in" style="font-size:25pt"><b>OSC</b>: synthesizers, hardware/software.</p>
 						<br>
 						<br>
-						<p style="font-size:25pt"><b>Handles</b>: synthesis, sound/video output</p>
+						<p class="fragment fade-in" style="font-size:25pt"><b>Handles</b>: synthesis, sound/video output</p>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -342,7 +345,7 @@
 					</section>
 
 					<section>
-					Internal configuration based on the <b>FishBowl</b>:
+					<p style="font-size:25pt">The central piece is the <b>FishBowl</b></p>
 					<br>
 					<br>
 					<p class="fragment fade-in" style="font-size: 20pt;"> The FishBowl handles communication between components.</p>
@@ -542,11 +545,11 @@ Pd * d('g:10', p='0.5 0.5 0.25', orbit=2,
 				</section>
 
 				<section>
-					<h4 style="font-size: 24pt; letter-spacing: 0.05em">USAGE: SARDINE IN THE WILD</h4>
+					<h4 style="font-size: 24pt; letter-spacing: 0.05em">SARDINE IN THE WILD</h4>
 
 
 					<section>
-					  Prototyping / Customizing / Composition
+					  <p>Prototyping / Customizing / Composition</p>
 					</section>
 
 					<section>
@@ -601,9 +604,18 @@ hush()
 					</section>
 
 					<section>
+						<iframe width="1332" height="562" src="https://www.youtube.com/embed/17pn6O9Ml7M" title="Live coding Physarum with Sardine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+					  <aside class="notes">
+    					Notes for this slide.
+ 						</aside>
+
+					</section>
+
+					<section>
 
 						<iframe width="888" height="562" src="https://www.youtube.com/embed/X0ka736Itjw" title="Dark Nights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-						<p style="font-size: 15pt">HighHarmonics, Dark Nights, electro-acoustic composition with Sardine.</p>
+						<p style="font-size: 15pt">HighHarmonics, Dark Nights, electroacoustic composition with Sardine.</p>
 
 
 					  <aside class="notes">
@@ -677,6 +689,15 @@ Pd >> d('ff:4', shape=0.5, speed=1, p=0.5, cutoff='[200:2000,100]', amp=0.5)
 
 					</section>
 
+					<section>
+						<video autoplay="true" loop="true" muted="true" width="640" height="480">
+   						<source src="images/remi_aleatronome.mp4" type="video/mp4"> Your browser does not support the video tag.
+						</video>
+						<p style="font-size: 16pt">Ralt144MI performance, Aléatronome, Saint-Étienne, 12th of December (2022)</p>
+					  <aside class="notes">
+    					Notes for this slide.
+ 						</aside>
+					</section>
 
 					<section>
 						<img height=500, width=500 src="images/satellite.png">
@@ -688,18 +709,6 @@ Pd >> d('ff:4', shape=0.5, speed=1, p=0.5, cutoff='[200:2000,100]', amp=0.5)
 
 					</section>
 
-					<section>
-						<video autoplay="true" loop="true" muted="true" width="640" height="480">
-   					<source src="images/remi_aleatronome.mp4" type="video/mp4"> Your browser does not support the video tag.
-				</video>
-				<p style="font-size: 16pt">Ralt144MI performance, Aléatronome, Saint-Étienne, 12th of December (2022)</p>
-
-					  <aside class="notes">
-    					Notes for this slide.
- 						</aside>
-
-				</section>
-
 
 				</section>
 
@@ -707,7 +716,7 @@ Pd >> d('ff:4', shape=0.5, speed=1, p=0.5, cutoff='[200:2000,100]', amp=0.5)
 					<h4 style="font-size: 24pt; letter-spacing: 0.05em">DOCUMENTATION</h4>
 					<section>
 						<img height=500, width=1200 src="images/sardine_website.png">
-						<p style="font-size:20pt">Sardine Website: <url>https://sardine.raphaelforment.fr</url></p>
+						<p style="font-size:16pt">Complete documentation on the Sardine Website: <url>https://sardine.raphaelforment.fr</url></p>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -718,7 +727,7 @@ Pd >> d('ff:4', shape=0.5, speed=1, p=0.5, cutoff='[200:2000,100]', amp=0.5)
 
 					<section>
 							<img height=500, width=800 src="images/docstrings.png">
-							<p style="font-size:20pt">Extensively documented source code on <b>GitHub</b></p>
+							<p style="font-size:18pt">The code source contains valuable tips for understanding<br> Sardine and the low-level mechanisms</p>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -730,15 +739,17 @@ Pd >> d('ff:4', shape=0.5, speed=1, p=0.5, cutoff='[200:2000,100]', amp=0.5)
 
 
 				<section>
-					<h4 style="font-size: 24pt; letter-spacing: 0.05em">THE SARDINE PROJECT</h4>
+					<h4 style="font-size: 24pt; letter-spacing: 0.05em">THE SARDINE PROJECT: RETROSPECTIVE THOUGHTS</h4>
 					<section>
 						<p style="font-size: 20pt">
 						The Sardine project started last august. It is still a rather young live coding tool.
 						Where does it stands? What problems and/or obstacles are still present down the road?</p>
-						<p class="fragment fade-in" style="font-size: 20pt">- Python is a <em>strength</em> but also a <em>weakness</em></p>
-						<p class="fragment fade-in" style="font-size: 20pt">- Modularity is a <em>strength</em> but also a <em>weakness</em></p>
-						<p class="fragment fade-in" style="font-size: 20pt">- Growing a community of contributors / users</p>
-						<p class="fragment fade-in" style="font-size: 20pt">- Addressing current issues / shortcomings</p>
+						<ul>
+							<li class="fragment fade-in" style="font-size: 20pt">Python is a <em>strength</em> but also a <em>weakness</em></p>
+							<li class="fragment fade-in" style="font-size: 20pt">Modularity is a <em>strength</em> but also a <em>weakness</em></p>
+							<li class="fragment fade-in" style="font-size: 20pt">Growing a community of contributors / users</p>
+							<li class="fragment fade-in" style="font-size: 20pt">Addressing current issues / shortcomings</p>
+						</ul>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -790,9 +801,11 @@ Pd >> d('ff:4', shape=0.5, speed=1, p=0.5, cutoff='[200:2000,100]', amp=0.5)
 				<section>
 					<h4 style="font-size: 24pt; letter-spacing: 0.05em">CONCLUSION</h4>
 					<section>
-						<p class="fragment fade-in" style="font-size: 20pt">Sardine is waiting for new users, new ideas! Hack it!</p>
-						<p class="fragment fade-in" style="font-size: 20pt"><b>Sardine</b> performance on the 22th with Rémi Georges (Algorave)</p>
-						<p class="fragment fade-in" style="font-size: 17pt"><b>Ziffers</b>: Numbered Notation for Algorithmic Composition, 19th at 15:35</p>
+						<p class="fragment fade-in" style="font-size: 20pt">Sardine is waiting for new<br> users and new ideas! Hack it!</p>
+						<br>
+						<p class="fragment fade-in" style="font-size: 20pt"><b>Sardine</b> performance on the 22th<br> with Rémi Georges (Algorave)</p>
+						<br>
+						<p class="fragment fade-in" style="font-size: 17pt"><b>Ziffers</b>: Numbered Notation for<br> Algorithmic Composition, 15:35</p>
 
 					  <aside class="notes">
     					Notes for this slide.
