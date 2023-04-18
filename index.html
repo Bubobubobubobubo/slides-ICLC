@@ -188,9 +188,7 @@
 
 				<section>
 				<p style="font-size: 19pt;">
-				Sardine development started as an example for a PhD manuscript. The original intent was to document specific 
-				live coding gestures and idioms using the language I knew best. Sardine aimed to document how to create a 
-				live coding library using a modern high-level interpreted language.
+				Sardine started as an example for a PhD manuscript.
 				</p>
 				<br>
 				<ul style="font-size: 20pt">
@@ -199,8 +197,7 @@
 			 		<li style="font-size:19pt" class="fragment fade-in"> Making it customizable, extendable and modular (open to users)
 			 		<li class="fragment fade-in"> Documenting and sharing as part of the design process.
 			 		<ul class="fragment fade-in">
-			 			<li>Live coding, due to its open-source nature, is a collective activity. 
-			 			Users know better what they would like to do!</li>
+			 			<li>Users know better what they would like to do!</li>
 			 		</ul>
 					<br>
 			    <li style="font-size:19pt" class="fragment fade-in"> Making it powerful, accessible, while teaching it!
@@ -242,13 +239,12 @@
 
 
 				<section>
-					<p style="font-size: 30pt">Concurrent pattern languages</p>
+					<p style="font-size: 30pt">Opening up to multiple pattern languages</p>
 					<ul style="list-style: disc; font-size: 20pt;">
 					<li class="fragment fade-in"> <em>Sardine Pattern Language</em> (SPL): a basic parser for data/note patterns. Pre-installed with the library, pre-configured.</li>
 					<li class="fragment fade-in"> <em>Ziffers Numeric Language</em>: a parser for chords / melodies. Shipped as a Python module extension. pre-configured.</li>
 					<li class="fragment fade-in"> <em>Python for hackability</em>: recursive functions + Python syntax = pattern language. User-made functions and patterns.</li>
-					<li class="fragment fade-in"> <em>New notation ideas:</em> a <em>Tidal</em> parser, an Object-Oriented Library of Patterns with an algebra?</li>
-					<li class="fragment fade-in"> <em>Code Archeology:</em> making some pattern languages live!</li>
+					<li class="fragment fade-in"> <em>New notation ideas:</em> a <em>Tidal</em> parser, an Object-Oriented Library of Patterns with an algebra? Code Archeology?</li>
 					</ul>
 
 					  <aside class="notes">
@@ -258,11 +254,15 @@
 				</section>
 
 				<section>
-					<h2>Modularity and extendability</h2>
+					<p style="font-size: 30pt">Modularity and extendability</p>
 					<ul style="font-size: 20pt"> 
-						<li class="fragment fade-in"> Full support for <b>MIDI</b> and <b>OSC</b> protocols (in and out): reactive code, querying controller values, Sardine as middleware. There is room for improvements and supporting more protocols.
-  		  		<li class="fragment fade-in"> Definition of custom <b>MIDI</b> <b>Senders</b> for instruments and controllers. Sardine can live without SuperCollider.
-						<li class="fragment fade-in"> <b>Integrating foreign libraries</b>: Sardine is just regular Python code. Import anything else.
+					<li class="fragment fade-in"> <b>MIDI</b> and <b>OSC</b> protocols full support (in and out):</li> 
+					<ul class="fragment fade-in">
+						<li class="fragment fade-in">Sardine as a middleware for art performance.</li> 
+						<li class="fragment fade-in">reactive code, querying controller values.</li>
+					</ul>
+  		  	<li class="fragment fade-in"> Definition of custom <b>MIDI</b> <b>Senders</b> for instruments and controllers. Sardine can live without SuperCollider.</li>
+					<li class="fragment fade-in"> <b>Integrating foreign libraries</b>: Sardine is just regular Python code. Import anything else.
 					</ul>
 
 					  <aside class="notes">
@@ -275,7 +275,7 @@
 				<h2 style="font-size: 30pt">...and other reasons</h2>
 					<ul style="font-size: 20pt"> 
 					<li class="fragment fade-in"> Easing up syncronisation and control of my studio setup </li>
-					<li class="fragment fade-in" style="font-size: 18pt"> Cross-media collaboration / networked collaboration with friends. </li>
+					<li class="fragment fade-in" style="font-size: 18pt"> Cross-media collaboration / networked collaboration with friends</li>
 					<li class="fragment fade-in"> Encouraged by the current state of live coding on Python</li>
 					</ul>
 
@@ -326,14 +326,14 @@
 
 
 					<section>
-						<p>Possible backends:</p>
+						<p style="font-size:25pt">Possible backends:</p>
 						<br>
-						<p><b>SuperDirt</b>: audio samples, SuperCollider backend.</p>
-						<p><b>MIDI</b>: synthesizer, drum machine, hard/soft device.</p>
-						<p><b>OSC</b>: synthesizer, drum machine, hard/soft device.</p>
+						<p style="font-size:20pt" ><b>SuperDirt</b>: audio samples, SuperCollider backend.</p>
+						<p style="font-size:20pt"><b>MIDI</b>: synthesizer, drum machine, hard/soft device.</p>
+						<p style="font-size:20pt"><b>OSC</b>: synthesizer, drum machine, hard/soft device.</p>
 						<br>
 						<br>
-						<p><b>Handles</b>: synthesis, sound/video output</p>
+						<p style="font-size:25pt"><b>Handles</b>: synthesis, sound/video output</p>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -362,15 +362,15 @@
 
 
 					<section>
-						Configuring Sardine is an essential part of the interaction with the software. You get to decide what you want to get out of it:
+					<p style="font-size: 19pt">Configuring Sardine is an essential part of the interaction with the software. You get to decide what you want to take:</p>
 						<br>
 						<br>
 						<ul>
-							<li class="fragment fade-in"> Pattern system?
-							<li class="fragment fade-in"> MIDI?
-							<li class="fragment fade-in"> SuperDirt?
-							<li class="fragment fade-in"> OSC?
-							<li class="fragment fade-in"> Local or Networked clock?
+							<li style="font-size: 20pt" class="fragment fade-in"> Pattern system?
+							<li style="font-size: 20pt" class="fragment fade-in"> MIDI?
+							<li style="font-size: 20pt" class="fragment fade-in"> SuperDirt?
+							<li style="font-size: 20pt" class="fragment fade-in"> OSC?
+							<li style="font-size: 20pt" class="fragment fade-in"> Local or Networked clock?
 						<br>
 						</ul>
 
@@ -441,12 +441,14 @@
 
 				<section>
 					<p style="font-size: 20pt;">What about the verbosity?</p>
-					<br><br>
-					<p class="fragment fade-in" style="font-size: 20pt;">(1) Verbosity is not <em>inherently bad</em> for specific use cases. 
-					You can write pure Python, you can make swimming functions perform odd/peculiar tasks.
-					<p class="fragment fade-in" style="font-size: 20pt;">(2) Swimming functions are <b>templates</b> 
-					for writing temporal functions. Build your system by abstracting over them!
-					<p class="fragment fade-in" style="font-size: 20pt;">(3) They are generic, flavourless, un-opiniated.
+					<ul>
+					<li class="fragment fade-in" style="font-size: 17pt;">Verbosity is not <em>inherently bad</em> for certain use cases.
+						You can write pure Python, you can leverage swimming functions for peculiar tasks.</li>
+					<li class="fragment fade-in" style="font-size: 18pt;">Swimming functions are <b>templates</b> 
+						for writing temporal functions. Build your system by abstracting over them!</li>
+					<li class="fragment fade-in" style="font-size: 20pt;">Swimming functions are generic, flavourless, un-opiniated.</li>
+					<br>
+					<ul>
 
 					  <aside class="notes">
     					Notes for this slide.
@@ -498,7 +500,7 @@ Pd * d('g:10', p='0.5 0.5 0.25', orbit=2,
 				    D('cp')
 				    again(sleeping, p=2)
 					</code></pre>
-					<p style="font-size: 14pt;"> Mimicking <em>Sonic Pi</em> (Sam Aaron) imperative sleeping mechanism <em>for the sake of it</em></p>.
+					<p style="font-size: 14pt;"> Mimicking <em>Sonic Pi</em> imperative sleeping mechanism <em>for the sake of it</em></p>.
 					</div>
 					
 					<div class="col">
@@ -520,13 +522,13 @@ Pd * d('g:10', p='0.5 0.5 0.25', orbit=2,
 
 				<section>
 					<br>
-					<p class="fragment fade-in" style="font-size: 20pt;">Swimming functions for timed interactions (scheduler).</p>
-					<br>
-					<p class="fragment fade-in" style="font-size: 20pt;">Pattern languages/DSLs are optional and/or on-demand.</p>
-					<br>
-					<p class="fragment fade-in" style="font-size: 20pt;">I/O components use a declarative, session-based syntax.</p>
-					<br>
-					<p class="fragment fade-in" style="font-size: 20pt;">Interaction with the Python language is encouraged, by design. Not locking the user into a DSL / usecase.</p>				
+					<p>Key design choices in Sardine's syntax</p>
+					<ul>
+						<li class="fragment fade-in" style="font-size: 20pt;">Swimming functions for timed interactions (scheduler).</li>
+						<li class="fragment fade-in" style="font-size: 20pt;">Pattern languages/DSLs are optional and/or on-demand.</li>
+						<li class="fragment fade-in" style="font-size: 20pt;">I/O components use a declarative, session-based syntax.</li>
+						<li class="fragment fade-in" style="font-size: 20pt;">Interaction with the Python language is encouraged, by design. Not locking the user into a DSL / usecase.</li>
+					</ul>
 
 					  <aside class="notes">
     					Notes for this slide.
